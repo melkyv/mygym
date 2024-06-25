@@ -16,12 +16,21 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @can('schedule-class')
-                    <x-nav-link :href="route('schedule.create')" :active="request()->routeIs('schedule.create')">
-                        Schedule a Class
-                    </x-nav-link>
-                    <x-nav-link :href="route('schedule.index')" :active="request()->routeIs('schedule.index')">
-                        Upcoming Classes
-                    </x-nav-link>
+                        <x-nav-link :href="route('schedule.create')" :active="request()->routeIs('schedule.create')">
+                            Schedule a Class
+                        </x-nav-link>
+                        <x-nav-link :href="route('schedule.index')" :active="request()->routeIs('schedule.index')">
+                            Upcoming Classes
+                        </x-nav-link>
+                    @endcan
+
+                    @can('book-class')
+                        <x-nav-link :href="route('booking.create')" :active="request()->routeIs('booking.create')">
+                            Book a Class
+                        </x-nav-link>
+                        <x-nav-link :href="route('booking.index')" :active="request()->routeIs('booking.index')">
+                            Upcoming Classes
+                        </x-nav-link>
                     @endcan
                 </div>
             </div>
